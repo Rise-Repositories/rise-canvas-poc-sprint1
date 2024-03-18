@@ -2,17 +2,26 @@ package school.sptech;
 
 public class Main {
     public static void main(String[] args) {
-        int[] arr = { 12, 11, 13, 5, 6 };
-        
-        Sort.insertion(arr);
-        Sort.bubble(arr);
-        Sort.selection(arr);
+        Ong[] ongs = {
+                new Ong("cachorrinhos e amor", "cachorrinho@gmail.com", "123", "123456789"),
+                new Ong("ong passaro", "passaros@ong.com","123", "123456789"),
+                new Ong("ong gato", "contato.gatinhos@gmail.com", "123", "123456789"),
+                new Ong("ong do amor", "maisAmor@outlook.com", "123", "123456789")
+        };
 
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
+
+        Sort.byName(ongs);
+        System.out.println("Ordenado por Nome-----------------");
+        for (Ong ong : ongs) {
+            System.out.println(ong);
         }
 
-        int value = Search.binarySearch(arr, 6);
-        System.out.println("\n"+ value);
+        System.out.println("\nOrdenado por Email-----------------");
+        Sort.byEmail(ongs);
+        for (Ong ong : ongs) {
+            System.out.println(ong);
+        }
+
+
     }
 }
